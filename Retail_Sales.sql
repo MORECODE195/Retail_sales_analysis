@@ -6,45 +6,27 @@ select * from Retail_Data
 select *
 from Retail_Data
 where Transactions_id is NULL
-OR
-Sale_date is NULL
-OR
-Sale_time is NULL
-OR
-Customer_id is NULL
-OR
-Gender is NULL
-OR
-Category is NULL
-OR
-Quantity is NULL
-OR
-Price_per_unit is NULL
-OR
-Cogs is NULL
-OR
-Total_sales is NULL
+OR Sale_date is NULL
+OR Sale_time is NULL
+OR Customer_id is NULL
+OR Gender is NULL
+OR Category is NULL
+OR Quantity is NULL
+OR Price_per_unit is NULL
+OR Cogs is NULL
+OR Total_sales is NULL
 
 Delete from Retail_Data
 where Transactions_id is NULL
-OR
-Sale_date is NULL
-OR
-Sale_time is NULL
-OR
-Customer_id is NULL
-OR
-Gender is NULL
-OR
-Category is NULL
-OR
-Quantity is NULL
-OR
-Price_per_unit is NULL
-OR
-Cogs is NULL
-OR
-Total_sales is NULL
+OR Sale_date is NULL
+OR Sale_time is NULL
+OR Customer_id is NULL
+OR Gender is NULL
+OR Category is NULL
+OR Quantity is NULL
+OR Price_per_unit is NULL
+OR Cogs is NULL
+OR Total_sales is NULL
 
 --** Calculating Average value of non-null values in age column and Updating it with all null values in age column **--
 select avg(Age) AS AverageAge
@@ -76,11 +58,8 @@ select count(*) from Retail_Data
 Select COUNT(*) as total_sale from Retail_Data
 
 -- How many uniuque customers we have ?
-
 Select COUNT(DISTINCT Customer_id) as total_sale from Retail_Data
-
 Select DISTINCT Category from Retail_Data
-
 select * from Retail_Data
 
 -- My Analysis & Findings
@@ -88,6 +67,7 @@ select * from Retail_Data
 select *
 from Retail_Data
 where Sale_date = '2022-11-05'
+
 
 -- Q.2 Write a SQL query to retrieve all transactions where the category is 'Clothing' and
 --     the quantity sold is more than 4 in the month of Nov-2022
@@ -97,6 +77,7 @@ where Category = 'Clothing' and Quantity >= 4
 	and Sale_date >= '2022-11-1'
 	and Sale_date < '2022-12-1'
 
+
 -- Q.3 Write a SQL query to calculate the total sales (total_sale) for each category.
 select Category,
 sum(Total_sales) as Total_Sales, count(*) as Total_Orders
@@ -104,12 +85,14 @@ from Retail_Data
 group by Category
 order by Total_Sales
 
+
 -- Q.4 Write a SQL query to find the average age of customers who purchased items from
 --     the 'Beauty' category.
 select
 avg(Age) as Average_Age_of_Customers
 from Retail_Data
 where Category = 'Beauty'
+
 
 -- Q.5 Write a SQL query to find all transactions where the total_sale is greater than 1000.
 select *
@@ -149,6 +132,7 @@ sum(Total_sales) as Total_Sales
 from Retail_Data
 group by Customer_id
 order by Total_Sales desc
+
 
 -- Q.9 Write a SQL query to find the number of unique customers who purchased items from
 --     each category.
